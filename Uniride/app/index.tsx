@@ -27,8 +27,16 @@ export default function LoginScreen() {
         backgroundColor: Colors.gray.medium,
       }}
     >
-      <Text style={{ fontSize: 24, marginBottom: 20, textAlign: "center" }}>
-        Login
+      <Text
+        style={{
+          fontSize: 30,
+          marginBottom: 90,
+          color: Colors.default,
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
+      >
+        UniRide
       </Text>
       <TextInput
         style={styles.input}

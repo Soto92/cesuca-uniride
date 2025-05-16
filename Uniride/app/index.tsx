@@ -2,6 +2,7 @@ import { useState } from "react";
 import { View, Text, TextInput, Pressable, Alert } from "react-native";
 import { router } from "expo-router";
 import { useAuth } from "./context/AuthContext";
+import { Colors } from "@/constants/Colors";
 
 export default function LoginScreen() {
   const [username, setUsername] = useState("");
@@ -18,7 +19,14 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", padding: 20 }}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        padding: 20,
+        backgroundColor: Colors.gray.medium,
+      }}
+    >
       <Text style={{ fontSize: 24, marginBottom: 20, textAlign: "center" }}>
         Login
       </Text>

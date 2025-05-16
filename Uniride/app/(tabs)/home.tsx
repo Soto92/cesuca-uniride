@@ -1,11 +1,19 @@
 import { View, Text, Pressable } from "react-native";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
 
 export default function Home() {
   const router = useRouter();
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: Colors.gray.medium,
+      }}
+    >
       <Text style={{ fontSize: 24, marginBottom: 20 }}>Bem-vindo à Home</Text>
       <Pressable
         onPress={() => router.replace("/")}

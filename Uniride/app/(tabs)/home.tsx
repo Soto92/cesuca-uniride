@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  Pressable,
   Image,
   TouchableOpacity,
   StyleSheet,
@@ -25,13 +24,19 @@ export default function Home() {
       }}
     >
       <View style={styles.content}>
-        <Text style={styles.title}>Hoje eu quero</Text>
-        <TouchableOpacity style={styles.card}>
+        <Text style={styles.title}>Hoje eu vou:</Text>
+        <TouchableOpacity
+          onPress={() => router.push("/driverForm")}
+          style={styles.card}
+        >
           <Image style={styles.img} source={Driver} />
           <Text style={styles.btnLabel}>Oferecer Carona</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          onPress={() => router.push("/passengerForm")}
+          style={styles.card}
+        >
           <Image style={styles.img} source={Passenger} />
           <Text style={styles.btnLabel}>Pegar Carona</Text>
         </TouchableOpacity>

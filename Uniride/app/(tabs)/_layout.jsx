@@ -1,6 +1,7 @@
 import { Tabs, router } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useAuth } from "../context/AuthContext";
+import { Colors } from "@/constants/Colors";
 
 export default function TabsLayout() {
   const { setIsAuthenticated } = useAuth();
@@ -11,28 +12,22 @@ export default function TabsLayout() {
   };
 
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "#007AFF" }}>
-      <Tabs.Screen
-        name="home"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="home" size={size} color={color} />
-          ),
-          headerRight: () => (
-            <MaterialIcons
-              name="logout"
-              size={24}
-              color="red"
-              style={{ marginRight: 15 }}
-              onPress={handleLogout}
-            />
-          ),
-        }}
-      />
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: Colors.blue.light,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: Colors.gray.medium,
+          //  borderTopWidth: 0,
+          elevation: 5,
+        },
+      }}
+    >
+      <Tabs.Screen name="home" options={{ headerShown: false }} />
       <Tabs.Screen
         name="settings"
         options={{
+          headerStyle: { backgroundColor: Colors.blue.light },
           title: "Configurações",
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="settings" size={size} color={color} />
@@ -41,7 +36,7 @@ export default function TabsLayout() {
             <MaterialIcons
               name="logout"
               size={24}
-              color="red"
+              color={Colors.blue.dark}
               style={{ marginRight: 15 }}
               onPress={handleLogout}
             />

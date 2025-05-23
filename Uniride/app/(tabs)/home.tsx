@@ -1,5 +1,16 @@
-import { View, Text, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import { useRouter } from "expo-router";
+
+import Driver from "../../assets/images/driver.jpg";
+import Passenger from "../../assets/images/passenger.jpg";
 import { Colors } from "@/constants/Colors";
 
 export default function Home() {
@@ -9,18 +20,57 @@ export default function Home() {
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
         backgroundColor: Colors.gray.medium,
       }}
     >
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>Bem-vindo à Home</Text>
-      <Pressable
-        onPress={() => router.replace("/")}
-        style={{ backgroundColor: "red", padding: 10, borderRadius: 5 }}
-      >
-        <Text style={{ color: "white" }}>Sair</Text>
-      </Pressable>
+      <View style={styles.content}>
+        <Text style={styles.title}>Hoje eu quero</Text>
+        <TouchableOpacity style={styles.card}>
+          <Image style={styles.img} source={Driver} />
+          <Text style={styles.btnLabel}>Oferecer Carona</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.card}>
+          <Image style={styles.img} source={Passenger} />
+          <Text style={styles.btnLabel}>Pegar Carona</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
+
+const { width } = Dimensions.get("window");
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 16,
+    margin: 6,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  img: {
+    width: width - 130,
+    height: 150,
+    borderRadius: 16,
+  },
+  content: {
+    marginTop: 40,
+  },
+  btnLabel: {
+    position: "absolute",
+    fontSize: 32,
+    color: Colors.default,
+    textShadowColor: "black",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  title: {
+    fontSize: 32,
+    color: Colors.default,
+    textShadowColor: "black",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    marginBottom: 32,
+  },
+});

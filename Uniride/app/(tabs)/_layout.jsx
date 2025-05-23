@@ -18,7 +18,6 @@ export default function TabsLayout() {
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: Colors.gray.medium,
-          //  borderTopWidth: 0,
           elevation: 5,
         },
       }}

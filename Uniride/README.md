@@ -45,3 +45,8 @@ This command will move the starter code to the **app-example** directory and cre
 - Rodrigo Pereira
 - Thiago Amaral
 - Victor
+
+## Login
+
+User: user1
+psw: Welcome1!

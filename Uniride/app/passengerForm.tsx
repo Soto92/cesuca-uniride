@@ -78,6 +78,9 @@ export default function Passenger() {
             placeholderTextColor="#ccc"
             value={form.observacoes}
             onChangeText={(text) => handleChange("observacoes", text)}
+            multiline={true}
+            numberOfLines={4}
+            textAlignVertical="top"
           />
         </View>
 
@@ -118,14 +121,16 @@ const styles = StyleSheet.create({
   pickerWrapper: {
     backgroundColor: Colors.gray.dark,
     borderRadius: 10,
-
     marginBottom: 10,
     justifyContent: "center",
   },
   picker: {
-    color: Colors.gray.dark,
+    color: Colors.default,
     height: 44,
     width: "100%",
+    backgroundColor: Colors.gray.dark,
+    borderRadius: 10,
+    paddingHorizontal: 8,
   },
   buttonWrapper: {
     alignItems: "center",

@@ -3,8 +3,8 @@ import React from "react";
 
 import { StyleSheet, View } from "react-native";
 
-export function Card({ children }: { children: React.ReactNode }) {
-  return <View style={styles.card}>{children}</View>;
+export function Card({ children, style = {} }: { children: React.ReactNode }) {
+  return <View style={[styles.card, style]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({

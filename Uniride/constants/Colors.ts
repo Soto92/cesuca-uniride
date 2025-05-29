@@ -8,5 +8,13 @@ export const Colors = {
     light: "#37B6E9",
     dark: "#4B4CED",
   },
+  yellow: "#FFD700",
+  green: {
+    default: "#28a745",
+  },
+  red: {
+    default: "#dc3545",
+  },
+  white: "#FFFFFF",
   default: "#FFFFFF",
 };

@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { AuthProvider } from "./context/AuthContext";
+import { Colors } from "@/constants/Colors";
 
 export default function RootLayout() {
   return (
@@ -9,19 +10,35 @@ export default function RootLayout() {
 
         <Stack.Screen
           name="driverForm"
-          options={{ headerShown: true, title: "Formulário" }}
+          options={{
+            headerShown: true,
+            title: "Formulário do motorista",
+            headerStyle: { backgroundColor: Colors.blue.light },
+          }}
         />
         <Stack.Screen
           name="listOfPassengers"
-          options={{ headerShown: true, title: "Lista de passageiros" }}
+          options={{
+            headerShown: true,
+            title: "Passageiros Encontrados",
+            headerStyle: { backgroundColor: Colors.blue.light },
+          }}
         />
         <Stack.Screen
           name="passengerForm"
-          options={{ headerShown: true, title: "Formulário" }}
+          options={{
+            headerShown: true,
+            title: "Formulário do passageiro",
+            headerStyle: { backgroundColor: Colors.blue.light },
+          }}
         />
         <Stack.Screen
           name="matchDriver"
-          options={{ headerShown: true, title: "Mororista encontrado" }}
+          options={{
+            headerShown: true,
+            title: "Mororista encontrado",
+            headerStyle: { backgroundColor: Colors.blue.light },
+          }}
         />
       </Stack>
     </AuthProvider>

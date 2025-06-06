@@ -80,7 +80,6 @@ export default function Driver() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      console.log("Dados do Formulário:", form);
       router.push("/listOfPassengers");
     }
   };

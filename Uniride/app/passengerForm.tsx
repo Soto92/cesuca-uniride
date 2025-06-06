@@ -19,7 +19,7 @@ export default function Passenger() {
     partida: "",
     destino: "",
     horario: "",
-    genero: "Feminino",
+    genero: "",
     observacoes: "",
   });
 

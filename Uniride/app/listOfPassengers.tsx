@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 10,
+    flexWrap: "wrap",
   },
   actionButton: {
     flexDirection: "row",

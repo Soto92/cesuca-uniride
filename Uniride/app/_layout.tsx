@@ -13,7 +13,7 @@ export default function RootLayout() {
           options={{
             headerShown: true,
             title: "Formulário do motorista",
-            headerBackTitle: " ",
+            headerBackTitle: "Home",
             headerStyle: { backgroundColor: Colors.blue.light },
           }}
         />
@@ -21,7 +21,7 @@ export default function RootLayout() {
           name="listOfPassengers"
           options={{
             headerShown: true,
-            headerBackTitle: " ",
+            headerBackTitle: "Home",
             title: "Passageiros Encontrados",
             headerStyle: { backgroundColor: Colors.blue.light },
           }}
@@ -30,7 +30,7 @@ export default function RootLayout() {
           name="passengerForm"
           options={{
             headerShown: true,
-            headerBackTitle: " ",
+            headerBackTitle: "Home",
             title: "Formulário do passageiro",
             headerStyle: { backgroundColor: Colors.blue.light },
           }}
@@ -39,7 +39,7 @@ export default function RootLayout() {
           name="matchDriver"
           options={{
             headerShown: true,
-            headerBackTitle: " ",
+            headerBackTitle: "Home",
             title: "Mororista encontrado",
             headerStyle: { backgroundColor: Colors.blue.light },
           }}

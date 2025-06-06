@@ -1,16 +1,16 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-} from "react-native";
 import { useRouter } from "expo-router";
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
+import { Colors } from "@/constants/Colors";
 import Driver from "../../assets/images/driver.jpg";
 import Passenger from "../../assets/images/passenger.jpg";
-import { Colors } from "@/constants/Colors";
 
 export default function Home() {
   const router = useRouter();

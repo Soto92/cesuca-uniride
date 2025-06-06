@@ -4,6 +4,7 @@ import { Picker } from "@react-native-picker/picker";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
+  Alert,
   ScrollView,
   StyleSheet,
   Text,
@@ -26,6 +27,19 @@ export default function Passenger() {
     setForm({ ...form, [field]: value });
   };
 
+  const handleNext = () => {
+    const { partida, destino, horario } = form;
+    if (!partida || !destino || !horario) {
+      Alert.alert(
+        "Campos obrigatórios",
+        "Preencha todos os campos antes de continuar."
+      );
+      return;
+    }
+
+    router.push("/matchDriver");
+  };
+
   return (
     <ScrollView style={styles.container}>
       <Card>
@@ -33,7 +47,7 @@ export default function Passenger() {
           <Text style={styles.label}>Local da partida</Text>
           <TextInput
             style={styles.input}
-            placeholder="Digite"
+            placeholder="Ex: Cesuca"
             placeholderTextColor="#ccc"
             value={form.partida}
             onChangeText={(text) => handleChange("partida", text)}
@@ -42,7 +56,7 @@ export default function Passenger() {
           <Text style={styles.label}>Destino</Text>
           <TextInput
             style={styles.input}
-            placeholder="Digite"
+            placeholder="Ex: Em frente ao portão principal"
             placeholderTextColor="#ccc"
             value={form.destino}
             onChangeText={(text) => handleChange("destino", text)}
@@ -51,7 +65,7 @@ export default function Passenger() {
           <Text style={styles.label}>Horário da saída</Text>
           <TextInput
             style={styles.input}
-            placeholder="Digite"
+            placeholder="Ex: 18:00"
             placeholderTextColor="#ccc"
             value={form.horario}
             onChangeText={(text) => handleChange("horario", text)}
@@ -74,7 +88,7 @@ export default function Passenger() {
           <Text style={styles.label}>Observações</Text>
           <TextInput
             style={styles.input}
-            placeholder="Digite"
+            placeholder="Ex: Ar condicionado, porta malas cheio, prefiro não levar animais."
             placeholderTextColor="#ccc"
             value={form.observacoes}
             onChangeText={(text) => handleChange("observacoes", text)}
@@ -85,10 +99,7 @@ export default function Passenger() {
         </View>
 
         <View style={styles.buttonWrapper}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => router.push("/matchDriver")}
-          >
+          <TouchableOpacity style={styles.button} onPress={handleNext}>
             <Text style={styles.buttonText}>Avançar</Text>
           </TouchableOpacity>
         </View>

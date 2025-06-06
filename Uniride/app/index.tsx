@@ -1,8 +1,15 @@
-import { useState } from "react";
-import { View, Text, TextInput, Pressable, Alert } from "react-native";
-import { router } from "expo-router";
-import { useAuth } from "./context/AuthContext";
 import { Colors } from "@/constants/Colors";
+import { router } from "expo-router";
+import { useState } from "react";
+import {
+  Alert,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import { useAuth } from "./context/AuthContext";
 
 export default function LoginScreen() {
   const [username, setUsername] = useState("");
@@ -18,26 +25,17 @@ export default function LoginScreen() {
     }
   };
 
+  const handleForgotPassword = () => {
+    Alert.alert(
+      "Redefinir senha",
+      "Um e-mail foi enviado para redefinir sua senha."
+    );
+  };
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        padding: 20,
-        backgroundColor: Colors.gray.medium,
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 30,
-          marginBottom: 90,
-          color: Colors.default,
-          textAlign: "center",
-          fontWeight: "bold",
-        }}
-      >
-        UniRide
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>UniRide</Text>
+
       <TextInput
         style={styles.input}
         placeholder="Usuário"
@@ -52,14 +50,38 @@ export default function LoginScreen() {
         onChangeText={setPassword}
         secureTextEntry
       />
+
       <Pressable style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Entrar</Text>
       </Pressable>
+
+      <View style={styles.linksContainer}>
+        <Pressable onPress={() => {}}>
+          <Text style={styles.linkText}>Faça seu cadastro</Text>
+        </Pressable>
+
+        <Pressable onPress={handleForgotPassword}>
+          <Text style={styles.linkText}>Esqueci minha senha</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 20,
+    backgroundColor: Colors.gray.medium,
+  },
+  title: {
+    fontSize: 30,
+    marginBottom: 90,
+    color: Colors.default,
+    textAlign: "center",
+    fontWeight: "bold",
+  },
   input: {
     height: 40,
     borderColor: "gray",
@@ -74,9 +96,19 @@ const styles = {
     padding: 10,
     borderRadius: 5,
     alignItems: "center",
+    marginBottom: 20,
   },
   buttonText: {
     color: "white",
     fontWeight: "bold",
   },
-};
+  linksContainer: {
+    alignItems: "center",
+  },
+  linkText: {
+    color: Colors.blue.light,
+    fontSize: 14,
+    marginTop: 10,
+    textDecorationLine: "underline" as "underline",
+  },
+});

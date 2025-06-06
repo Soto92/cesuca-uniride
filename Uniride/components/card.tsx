@@ -1,9 +1,13 @@
 import { Colors } from "@/constants/Colors";
 import React from "react";
+import { StyleSheet, View, ViewStyle } from "react-native";
 
-import { StyleSheet, View } from "react-native";
+interface CardProps {
+  children: React.ReactNode;
+  style?: ViewStyle | ViewStyle[];
+}
 
-export function Card({ children, style = {} }: { children: React.ReactNode }) {
+export function Card({ children, style }: CardProps) {
   return <View style={[styles.card, style]}>{children}</View>;
 }
 

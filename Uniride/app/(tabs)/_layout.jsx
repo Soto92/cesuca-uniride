@@ -1,7 +1,7 @@
-import { Tabs, router } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
-import { useAuth } from "../context/AuthContext";
 import { Colors } from "@/constants/Colors";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Tabs, router } from "expo-router";
+import { useAuth } from "../context/AuthContext";
 
 export default function TabsLayout() {
   const { setIsAuthenticated } = useAuth();
